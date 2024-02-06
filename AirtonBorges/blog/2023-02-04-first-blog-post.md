@@ -1,6 +1,6 @@
 ---
 slug: criando-um-blog
-title: Docusaurus Core Team
+title: Primeiro Post, e por quê um blog?
 authors: AirtonBorges
 name: Airton Borges
 url: https://github.com/AirtonBorges
