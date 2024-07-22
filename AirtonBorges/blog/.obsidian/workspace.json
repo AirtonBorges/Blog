@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2021-08-26-welcome/index.md",
+                "file": "2024-03-18.md",
                 "mode": "source",
                 "source": false
               }
@@ -69,8 +69,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "511107b563086a2b",
@@ -86,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2021-08-26-welcome/index.md",
+                "file": "2024-03-18.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2021-08-26-welcome/index.md",
+                "file": "2024-03-18.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -126,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2021-08-26-welcome/index.md"
+                "file": "2024-03-18.md"
               }
             }
           }
@@ -147,8 +146,11 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "516f6c9bfb7e71ca",
+  "active": "170df18ab663e7f4",
   "lastOpenFiles": [
+    "2024-02-05-eu-sou-um-jogo-multiplayer.md",
+    "2024-03-18.md",
+    "2023-02-04-first-blog-post.md",
     "2021-08-26-welcome/docusaurus-plushie-banner.jpeg"
   ]
 }

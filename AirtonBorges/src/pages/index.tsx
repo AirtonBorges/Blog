@@ -1,43 +1,48 @@
-import clsx from 'clsx';
-import Link from '@docusaurus/Link';
-import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
-import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import Heading from '@theme/Heading';
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
+import Spline from "@splinetool/react-spline";
+import Layout from "@theme/Layout";
+import clsx from "clsx";
+import { Suspense } from "react";
 
-import styles from './index.module.css';
+import styles from "./index.module.css";
+import Link from '@docusaurus/Link';
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
   return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
-        </div>
-      </div>
+    <header className={clsx("header hero--primary", styles.heroBanner)}>
+      <section className="aside"></section>
     </header>
   );
 }
 
 export default function Home(): JSX.Element {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
-    <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+    <Layout title={`${siteConfig.title}`} description="Blog do Airton">
       <HomepageHeader />
-      <main>
-        <HomepageFeatures />
-      </main>
+      <div className="main">
+        <div className="spline">
+          <CustomSpline />
+        </div>
+        <div className="texto">
+          <h1>Olá, eu sou o Airton!</h1>
+          <span>Eu escrevo sobre coisas que eu gosto.</span>
+          <br />
+          <br />
+          <span>Sou estudante de Ciência da Computação e trabalho com Angular e C#, mas me enfio em tudo que eu posso envolvendo novas tecnologias, ou projetos desafiadores.</span>
+          <br />
+          <br />
+          <span>Se quiser ir para o blog, só clicar <Link to="/blog">aqui</Link>.</span>
+        </div>
+      </div>
     </Layout>
+  );
+}
+
+export function CustomSpline(): JSX.Element {
+  return (
+    <Suspense fallback={<img>Loading...</img>}>
+      <Spline scene="https://prod.spline.design/NRzroyFKIV9uqcXK/scene.splinecode" />
+    </Suspense>
   );
 }
