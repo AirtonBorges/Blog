@@ -1,11 +1,12 @@
+import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Spline from "@splinetool/react-spline";
 import Layout from "@theme/Layout";
 import clsx from "clsx";
-import { Suspense } from "react";
+import { Suspense } from 'react';
+import { BrowserView, MobileView } from "react-device-detect";
 
 import styles from "./index.module.css";
-import Link from '@docusaurus/Link';
 
 function HomepageHeader() {
   return (
@@ -29,10 +30,16 @@ export default function Home(): JSX.Element {
           <span>Eu escrevo sobre coisas que eu gosto.</span>
           <br />
           <br />
-          <span>Sou estudante de Ciência da Computação e trabalho com Angular e C#, mas me enfio em tudo que eu posso envolvendo novas tecnologias, ou projetos desafiadores.</span>
+          <span>
+            Sou estudante de Ciência da Computação e trabalho com Angular e C#,
+            mas me enfio em tudo que eu posso envolvendo novas tecnologias, ou
+            projetos desafiadores.
+          </span>
           <br />
           <br />
-          <span>Se quiser ir para o blog, só clicar <Link to="/blog">aqui</Link>.</span>
+          <span>
+            Se quiser ir para o blog, só clicar <Link to="/blog">aqui</Link>.
+          </span>
         </div>
       </div>
     </Layout>
@@ -41,8 +48,27 @@ export default function Home(): JSX.Element {
 
 export function CustomSpline(): JSX.Element {
   return (
-    <Suspense fallback={<img>Loading...</img>}>
-      <Spline scene="https://prod.spline.design/NRzroyFKIV9uqcXK/scene.splinecode" />
-    </Suspense>
+    <div>
+      <MobileView>
+        <img
+          height="500px"
+          width="500px"
+          src="https://raw.githubusercontent.com/AirtonBorges/Blog/main/AirtonBorges/teste.png"
+        />
+      </MobileView>
+      <BrowserView>
+        <Suspense
+          fallback={
+            <img
+              height="500px"
+              width="500px"
+              src="https://raw.githubusercontent.com/AirtonBorges/Blog/main/AirtonBorges/teste.png"
+            />
+          }
+        >
+          <Spline scene="https://prod.spline.design/NRzroyFKIV9uqcXK/scene.splinecode" />
+        </Suspense>
+      </BrowserView>
+    </div>
   );
 }
