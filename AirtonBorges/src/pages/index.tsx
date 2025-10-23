@@ -1,9 +1,8 @@
 import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
-import Spline from "@splinetool/react-spline";
 import Layout from "@theme/Layout";
 import clsx from "clsx";
-import { Suspense } from 'react';
+import { useEffect, useRef } from "react";
 import { BrowserView, MobileView } from "react-device-detect";
 
 import styles from "./index.module.css";
@@ -48,7 +47,7 @@ export default function Home(): JSX.Element {
 
 export function CustomSpline(): JSX.Element {
   return (
-    <div>
+    <div style={{ width: "100%", height: "100%" }}>
       <MobileView>
         <img
           height="500px"
@@ -56,19 +55,15 @@ export function CustomSpline(): JSX.Element {
           src="https://raw.githubusercontent.com/AirtonBorges/Blog/main/AirtonBorges/teste.png"
         />
       </MobileView>
-      <BrowserView>
-        <Suspense
-          fallback={
-            <img
-              height="500px"
-              width="500px"
-              src="https://raw.githubusercontent.com/AirtonBorges/Blog/main/AirtonBorges/teste.png"
-            />
-          }
-        >
-          <Spline scene="https://prod.spline.design/NRzroyFKIV9uqcXK/scene.splinecode" />
-        </Suspense>
-      </BrowserView>
+      <iframe
+        src="/webgl/index.html"
+        style={{
+          width: "100%",
+          height: "100%",
+          border: "none",
+        }}
+        title="WebGL Scene"
+      />
     </div>
   );
 }
