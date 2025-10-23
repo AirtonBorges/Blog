@@ -48,13 +48,6 @@ export default function Home(): JSX.Element {
 export function CustomSpline(): JSX.Element {
   return (
     <div style={{ width: "100%", height: "100%" }}>
-      <MobileView>
-        <img
-          height="500px"
-          width="500px"
-          src="https://raw.githubusercontent.com/AirtonBorges/Blog/main/AirtonBorges/teste.png"
-        />
-      </MobileView>
       <iframe
         src="/webgl/index.html"
         style={{
