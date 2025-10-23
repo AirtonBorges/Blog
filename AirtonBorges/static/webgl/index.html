@@ -144,10 +144,13 @@
                   }
                 };
 
-                canvas.addEventListener('click', function() {
-                  console.log('Canvas clicado!');
+                function handleInteraction() {
+                  console.log('Canvas interagido!');
                   window.callUnity('Game Logic', 'AdicionarParticula');
-                });
+                }
+
+                canvas.addEventListener('touchstart', handleInteraction);
+                canvas.addEventListener('pointerup', handleInteraction);
 
               }).catch((message) => {
                 alert(message);

@@ -22,7 +22,7 @@ export default function Home(): JSX.Element {
       <HomepageHeader />
       <div className="main">
         <div className="spline">
-          <CustomSpline />
+          <ChemLeap />
         </div>
         <div className="texto">
           <h1>Olá, eu sou o Airton!</h1>
@@ -45,7 +45,7 @@ export default function Home(): JSX.Element {
   );
 }
 
-export function CustomSpline(): JSX.Element {
+export function ChemLeap(): JSX.Element {
   return (
     <div style={{ width: "100%", height: "100%" }}>
       <iframe
