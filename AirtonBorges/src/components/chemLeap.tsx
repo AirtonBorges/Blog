@@ -113,28 +113,8 @@ export function ChemLeap() {
         );
 
         loadingBar.style.display = "none";
-        // fullscreenButton.onclick = () => unityInstance.SetFullscreen(1);
-
         window.unityInstance = unityInstance;
-
-        window.callUnity = (gameObject, method, params) => {
-          if (window.unityInstance) {
-            window.unityInstance.SendMessage(
-              "Game Logic",
-              "RemoverTodasAsParticulas"
-            );
-          } else {
-            console.error("Unity instance not ready yet");
-          }
-        };
-
-        // function handleInteraction() {
-        //   console.log("Canvas interagido!");
-        //   window.callUnity?.("Game Logic", "AdicionarParticula", 0);
-        // }
-
-        // canvas.addEventListener("touchstart", handleInteraction);
-        // canvas.addEventListener("pointerup", handleInteraction);
+        enviarMensagemUnity('AlterarDescricao', "Olá! Aqui você pode criar e combinar átomos. Clique em algum dos botões, ou aperte barra de espaço!")
       } catch (e) {
         alert(e);
       }
