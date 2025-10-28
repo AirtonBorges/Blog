@@ -2,10 +2,10 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import clsx from "clsx";
-import { useEffect, useRef } from "react";
-import { BrowserView, MobileView } from "react-device-detect";
 
 import styles from "./index.module.css";
+import { enviarMensagemUnity } from "../utils/enviarMensagemUnity";
+import { ChemLeap } from '../components/chemLeap';
 
 function HomepageHeader() {
   return (
@@ -17,12 +17,16 @@ function HomepageHeader() {
 
 export default function Home(): JSX.Element {
   const { siteConfig } = useDocusaurusContext();
+  function click() {
+    enviarMensagemUnity("AdicionarParticula", 0);
+  }
   return (
     <Layout title={`${siteConfig.title}`} description="Blog do Airton">
       <HomepageHeader />
       <div className="main">
-        <div className="spline">
-          <ChemLeap />
+        <div className="leap-chem">
+          <ChemLeap
+          />
         </div>
         <div className="texto">
           <h1>Olá, eu sou o Airton!</h1>
@@ -45,18 +49,18 @@ export default function Home(): JSX.Element {
   );
 }
 
-export function ChemLeap(): JSX.Element {
-  return (
-    <div style={{ width: "100%", height: "100%" }}>
-      <iframe
-        src="/webgl/index.html"
-        style={{
-          width: "100%",
-          height: "100%",
-          border: "none",
-        }}
-        title="WebGL Scene"
-      />
-    </div>
-  );
-}
+// export function ChemLeap(): JSX.Element {
+//   return (
+//     <div style={{ width: "100%", height: "100%", position: "relative" }}>
+//       <iframe
+//         src="/webgl/index.html"
+//         style={{
+//           width: "100%",
+//           height: "100%",
+//           border: "none",
+//         }}
+//         title="WebGL Scene"
+//       />
+//     </div>
+//   );
+// }
