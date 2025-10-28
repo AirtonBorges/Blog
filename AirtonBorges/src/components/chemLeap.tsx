@@ -230,7 +230,7 @@ export function ChemLeap() {
               height: 40,
             }}
           >
-            Neuron
+            Neutron
           </button>
           <button
             onClick={limparParticulas}
